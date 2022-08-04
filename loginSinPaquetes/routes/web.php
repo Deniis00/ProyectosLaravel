@@ -1,6 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/','welcome');
+Route::view('login','login')->name('login');
+Route::view('dashboard', 'dashboard');
+
+Route::post('login', 
+            function () {
+                $credentials = request()->only('email', 'password');
+
+                Auth::attempt($credentials);
+                
+                }
+    );
