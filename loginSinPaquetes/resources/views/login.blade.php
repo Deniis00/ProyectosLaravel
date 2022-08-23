@@ -10,7 +10,7 @@
 <body>
         @include('partials.nav')
         <h1>Bienvenido al Login del Proyecto Login sin paquetes</h1>
-
+       
         <Form method="post">
             @csrf
                 <label for="email">
@@ -23,6 +23,10 @@
                     <input type="password" name="password" placeholder="Contraseña...">
                 </label>
                 <br>
+               <label >
+                <input type="checkbox" name="remember">
+                recuerDa mi session
+               </label>
                 <button type="submit">
                     Ingresar
                 </button>

@@ -10,5 +10,9 @@
 <body>
         @include('partials.nav')
         <h1>Bienvenido al Dashboard del Proyecto Login sin paquetes</h1>
+
+        <br>
+        <br>
+        <pre>{{ Auth::user() }}</pre>
 </body>
 </html>

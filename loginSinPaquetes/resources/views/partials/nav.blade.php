@@ -1,4 +1,16 @@
+
+
 <a href="/">Inicio </a>
-<a href="/login">Login</a>
+
+@auth
 <a href="/dashboard">Dashboard</a>
-<a href="#">Logout</a>
+
+<form action="/logout" method="POST" style="">
+    @csrf
+
+<a href="#" onclick="this.closef('form').submit()">Logout</a>
+</form>
+    @else
+    <a href="/login">Login</a>
+@endauth
+

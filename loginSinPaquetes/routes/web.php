@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -16,14 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/','welcome');
-Route::view('login','login')->name('login');
-Route::view('dashboard', 'dashboard');
+Route::view('login','login')->name('login')->middleware('guest');
+Route::view('dashboard', 'dashboard')->name('dashboard')->middleware('auth');
 
-Route::post('login', 
-            function () {
-                $credentials = request()->only('email', 'password');
-
-                Auth::attempt($credentials);
-                
-                }
-    );
+Route::post('login', [LoginController::class,'login']);
