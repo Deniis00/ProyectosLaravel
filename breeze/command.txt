@@ -1,0 +1,13 @@
+/** INSTALACION DE PAQUETES DE BREEZE **/
+composer require laravel/breeze --dev
+
+/** INSTALAR BREEZE AL PROYECTO **/
+php artisan breeze:install
+
+/** INSTALACION DE LARAVEL-MIX **/
+npm install --save-dev laravel-mix
+
+/** ELIMINAR EL PAQUETE VITE **/
+npm remove vite laravel-vite-plugin
+rm vite.config.js
+
