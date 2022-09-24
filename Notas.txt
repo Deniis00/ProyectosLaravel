@@ -1,0 +1,17 @@
+Estas credenciales no coindicen con nuestros registros
+
+  $credentials = request()->only('email', 'password');
+                $remember = request()->filled('remember');
+
+                if (Auth::attempt($credentials, $remember))
+                {
+                    //regenera la sesioaaaaaaaa l csrf
+                    request()->session()->regenerate();
+                    return redirect('dashboard')->with('status','Session inicia con exito!!');
+                }
+                
+                throw ValidationException::withMessages([
+                    'email' => __('auth.failed'),
+                    'passwor' => __('auth.password')
+
+                ]);
