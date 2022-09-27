@@ -11,7 +11,7 @@
                 class="text-white text-lg float-left rounded cursor-pointer block"
                 :class=" openSide  && 'mr-2'">
             <input type="search" placeholder="Búsqueda"
-            class="bg-transparent text-base text-gray-600 w-full focus:ring-0 border-none"
+            class="bg-transparent text-base text-gray-600 w-full focus:ring-0 border-none appearance-none"
             :class="! openSide && 'hidden'" autofocus>
         </div>
     </div>
